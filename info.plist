@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>马尔福</string>
+	<key>connections</key>
+	<dict>
+		<key>12C9901A-B2F7-40CC-81ED-7C6D81E0D4F4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7E90FF62-57A0-402A-9F80-EBEE7F2E883C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>54E1B914-C952-43DB-B226-FB11015D1542</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>12C9901A-B2F7-40CC-81ED-7C6D81E0D4F4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>69105AED-05AF-47E1-9C89-17F23E73D024</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E81DD206-D88B-4084-A126-81A977774C34</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>86D30CEE-1D8F-49D6-8B78-1507D7D90132</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2B607D39-2CD3-414A-ACB9-DF56E57B0F28</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>876B8152-1608-4558-A08F-D5E7E3B76D09</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>EAF0999B-6C1F-4626-9358-393F98D71464</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>D4D89812-A2D4-490F-B4CA-551A34A92A13</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8B682E1B-40B2-4EC1-88AF-591FA8D0BA20</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>E4B18A60-E436-4EDB-AFBC-FAB139288C8A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DDF33CC2-E79E-4797-B94E-EBED4A5A2B55</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>水羽哲</string>
+	<key>description</key>
+	<string>使用Alfred发送新浪微博</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>马尔福——Alfred微博</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>微博</string>
+				<key>runningsubtext</key>
+				<string>微博完成授权</string>
+				<key>script</key>
+				<string>#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+import alfred_weibo
+from alfred_weibo import *
+query=u'{query}'
+setting={}
+print oauth_with_code(query)
+</string>
+				<key>subtext</key>
+				<string>微博完成授权</string>
+				<key>title</key>
+				<string>微博完成授权</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>E4B18A60-E436-4EDB-AFBC-FAB139288C8A</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>微博</string>
+				<key>runningsubtext</key>
+				<string>将会打开浏览器</string>
+				<key>script</key>
+				<string># coding: utf-8
+
+import alfred_weibo
+from alfred_weibo import *
+print gen_oauth_url()</string>
+				<key>subtext</key>
+				<string>进行微博认证</string>
+				<key>title</key>
+				<string>进行微博认证</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>876B8152-1608-4558-A08F-D5E7E3B76D09</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+import alfred_weibo
+from alfred_weibo import *
+print get_comments_to_me()
+</string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>E81DD206-D88B-4084-A126-81A977774C34</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>微博</string>
+				<key>runningsubtext</key>
+				<string>发送微博</string>
+				<key>script</key>
+				<string>#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+
+import alfred_weibo
+from alfred_weibo import *
+query=u'{query}'
+fb = Feedback()
+fb.add_item(u'发送',subtitle=u'发送到新浪微博',
+arg=query,icon=u'24.png')
+print fb</string>
+				<key>subtext</key>
+				<string>发送微博</string>
+				<key>title</key>
+				<string>发送微博</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>54E1B914-C952-43DB-B226-FB11015D1542</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>微博</string>
+				<key>runningsubtext</key>
+				<string>加载……</string>
+				<key>script</key>
+				<string>#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+
+import alfred_weibo
+from alfred_weibo import *
+query=u'{query}'
+fb = Feedback()
+fb.add_item(u'加载@我的微博',subtitle=u'loading…………',
+arg=u'loading…………',icon=u'24.png')
+print get_mentions()</string>
+				<key>subtext</key>
+				<string>微博</string>
+				<key>title</key>
+				<string>微博@我的</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>D4D89812-A2D4-490F-B4CA-551A34A92A13</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>#!/usr/bin/python
+# -*- coding: utf-8 -*-
+import alfred_weibo
+from alfred_weibo import *
+query=u'{query}'
+
+print send_weibo(query)</string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>12C9901A-B2F7-40CC-81ED-7C6D81E0D4F4</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+import alfred_weibo
+from alfred_weibo import *
+print get_mentions()
+</string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>8B682E1B-40B2-4EC1-88AF-591FA8D0BA20</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>完成新浪微博授权</string>
+				<key>title</key>
+				<string>完成授权</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>DDF33CC2-E79E-4797-B94E-EBED4A5A2B55</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>微博</string>
+				<key>runningsubtext</key>
+				<string>加载中……</string>
+				<key>script</key>
+				<string>#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+
+import alfred_weibo
+from alfred_weibo import *
+query=u'{query}'
+fb = Feedback()
+fb.add_item(u'加载',subtitle=u'loading…………',
+arg=u'loading…………',icon=u'24.png')
+print get_user_timeline()</string>
+				<key>subtext</key>
+				<string>最新的微博</string>
+				<key>title</key>
+				<string>最新的微博</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>86D30CEE-1D8F-49D6-8B78-1507D7D90132</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+import alfred_weibo
+from alfred_weibo import *
+print get_user_timeline()
+</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>2B607D39-2CD3-414A-ACB9-DF56E57B0F28</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>新浪微博发送成功</string>
+				<key>title</key>
+				<string>发送成功</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>7E90FF62-57A0-402A-9F80-EBEE7F2E883C</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>EAF0999B-6C1F-4626-9358-393F98D71464</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>微博</string>
+				<key>runningsubtext</key>
+				<string>loading</string>
+				<key>script</key>
+				<string>#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+
+import alfred_weibo
+from alfred_weibo import *
+query=u'{query}'
+fb = Feedback()
+fb.add_item(u'加载我的微博评论',subtitle=u'loading…………',
+arg=u'loading…………',icon=u'24.png')
+print get_comments_to_me()</string>
+				<key>subtext</key>
+				<string>微博评论</string>
+				<key>title</key>
+				<string>微博评论</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>69105AED-05AF-47E1-9C89-17F23E73D024</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>参考http://shui.quora.com/Alfred-Weibo
+有问题反馈给yuzhe@shui.us</string>
+	<key>uidata</key>
+	<dict>
+		<key>12C9901A-B2F7-40CC-81ED-7C6D81E0D4F4</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>2B607D39-2CD3-414A-ACB9-DF56E57B0F28</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>54E1B914-C952-43DB-B226-FB11015D1542</key>
+		<dict>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
+		<key>69105AED-05AF-47E1-9C89-17F23E73D024</key>
+		<dict>
+			<key>ypos</key>
+			<real>610</real>
+		</dict>
+		<key>7E90FF62-57A0-402A-9F80-EBEE7F2E883C</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>86D30CEE-1D8F-49D6-8B78-1507D7D90132</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>876B8152-1608-4558-A08F-D5E7E3B76D09</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>8B682E1B-40B2-4EC1-88AF-591FA8D0BA20</key>
+		<dict>
+			<key>ypos</key>
+			<real>500</real>
+		</dict>
+		<key>D4D89812-A2D4-490F-B4CA-551A34A92A13</key>
+		<dict>
+			<key>ypos</key>
+			<real>490</real>
+		</dict>
+		<key>DDF33CC2-E79E-4797-B94E-EBED4A5A2B55</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>E4B18A60-E436-4EDB-AFBC-FAB139288C8A</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>E81DD206-D88B-4084-A126-81A977774C34</key>
+		<dict>
+			<key>ypos</key>
+			<real>610</real>
+		</dict>
+		<key>EAF0999B-6C1F-4626-9358-393F98D71464</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://shui.quora.com/Alfred-Weibo</string>
+</dict>
+</plist>
